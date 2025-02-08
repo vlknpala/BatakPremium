@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BatakPremium.Views.DifficultySelectionPage"
+             BackgroundColor="#1B4D3E">
+
+    <VerticalStackLayout Spacing="25" Padding="30" VerticalOptions="Center">
+        <Label 
+            Text="Batak Premium"
+            SemanticProperties.HeadingLevel="Level1"
+            FontSize="48"
+            TextColor="#FFD700"
+            FontAttributes="Bold"
+            HorizontalOptions="Center" />
+
+        <Image
+            Source="batak_logo.png"
+            HeightRequest="200"
+            Margin="0,20,0,40"
+            SemanticProperties.Description="Batak Premium Logo"/>
+
+        <Button 
+            x:Name="PlayButton"
+            Text="OYNA"
+            SemanticProperties.Hint="Oyunu başlatır"
+            Clicked="OnPlayClicked"
+            HorizontalOptions="Center"
+            BackgroundColor="#FFD700"
+            TextColor="#1B4D3E"
+            FontAttributes="Bold"
+            FontSize="24"
+            WidthRequest="200"
+            HeightRequest="60"
+            Margin="0,0,0,40"/>
+
+        <VerticalStackLayout x:Name="DifficultyPanel" 
+                            IsVisible="false" 
+                            Spacing="15">
+            <Label 
+                Text="Zorluk Seviyesi Seçin"
+                FontSize="24"
+                TextColor="White"
+                HorizontalOptions="Center" />
+
+            <Button 
+                x:Name="EasyButton"
+                Text="Kolay"
+                SemanticProperties.Hint="Kolay seviye batak oyunu başlatır"
+                Clicked="OnDifficultySelected"
+                HorizontalOptions="Center"
+                BackgroundColor="#2D6A4F"
+                TextColor="White"
+                WidthRequest="200"/>
+
+            <Button 
+                x:Name="MediumButton"
+                Text="Orta"
+                SemanticProperties.Hint="Orta seviye batak oyunu başlatır"
+                Clicked="OnDifficultySelected"
+                HorizontalOptions="Center"
+                BackgroundColor="#2D6A4F"
+                TextColor="White"
+                WidthRequest="200"/>
+
+            <Button 
+                x:Name="HardButton"
+                Text="Zor"
+                SemanticProperties.Hint="Zor seviye batak oyunu başlatır"
+                Clicked="OnDifficultySelected"
+                HorizontalOptions="Center"
+                BackgroundColor="#2D6A4F"
+                TextColor="White"
+                WidthRequest="200"/>
+        </VerticalStackLayout>
+    </VerticalStackLayout>
+
+</ContentPage> 

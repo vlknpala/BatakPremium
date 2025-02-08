@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    xmlns:models="clr-namespace:BatakPremium.Models">
+
+    <!-- Oyuncu kartları için şablon -->
+    <DataTemplate x:Key="CardTemplate" x:DataType="models:Card">
+        <Frame Style="{StaticResource CardFrame}"
+               TranslationY="{Binding TranslationY}">
+            <Grid RowDefinitions="Auto,*,Auto">
+                <!-- Üst Değer ve Simge -->
+                <StackLayout Grid.Row="0" Orientation="Horizontal" Margin="2,2,0,0">
+                    <Label Text="{Binding Value}"
+                           Style="{StaticResource CardValueLabel}"
+                           TextColor="{Binding Suit, Converter={StaticResource SuitColorConverter}}"
+                           FontSize="16"/>
+                    <Label Text="{Binding Suit, Converter={StaticResource SuitSymbolConverter}}"
+                           Style="{StaticResource CardValueLabel}"
+                           TextColor="{Binding Suit, Converter={StaticResource SuitColorConverter}}"
+                           FontFamily="SegoeUISymbol"
+                           FontSize="16"/>
+                </StackLayout>
+
+                <!-- Orta Simge -->
+                <Label Grid.Row="1"
+                       Text="{Binding Suit, Converter={StaticResource SuitSymbolConverter}}"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       TextColor="{Binding Suit, Converter={StaticResource SuitColorConverter}}"
+                       FontFamily="SegoeUISymbol"
+                       FontSize="40"/>
+
+                <!-- Alt Değer ve Simge (Ters) -->
+                <StackLayout Grid.Row="2" Orientation="Horizontal" Margin="0,0,2,2" 
+                           HorizontalOptions="End" Rotation="180">
+                    <Label Text="{Binding Value}"
+                           Style="{StaticResource CardValueLabel}"
+                           TextColor="{Binding Suit, Converter={StaticResource SuitColorConverter}}"
+                           FontSize="16"/>
+                    <Label Text="{Binding Suit, Converter={StaticResource SuitSymbolConverter}}"
+                           Style="{StaticResource CardValueLabel}"
+                           TextColor="{Binding Suit, Converter={StaticResource SuitColorConverter}}"
+                           FontFamily="SegoeUISymbol"
+                           FontSize="16"/>
+                </StackLayout>
+            </Grid>
+
+            <Frame.Shadow>
+                <Shadow Brush="#000000"
+                       Offset="0,2"
+                       Radius="4"
+                       Opacity="0.25"/>
+            </Frame.Shadow>
+
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding SelectCardCommand}"/>
+            </Frame.GestureRecognizers>
+        </Frame>
+    </DataTemplate>
+
+    <!-- Bilgisayar kartları için şablon -->
+    <DataTemplate x:Key="ComputerCardTemplate">
+        <Frame Style="{StaticResource ComputerCardFrame}">
+            <Grid>
+                <Image Source="dragon_gold.png" 
+                       Aspect="AspectFill"
+                       Opacity="0.3"/>
+                <Border Stroke="#FFD700"
+                        StrokeThickness="2"
+                        StrokeShape="RoundRectangle 10">
+                    <Grid RowDefinitions="*,Auto,*">
+                        <Label Grid.Row="1"
+                               Text="♠"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               TextColor="#FFD700"
+                               FontSize="36"/>
+                    </Grid>
+                </Border>
+            </Grid>
+            <Frame.Shadow>
+                <Shadow Brush="#000000"
+                       Offset="0,2"
+                       Radius="4"
+                       Opacity="0.25"/>
+            </Frame.Shadow>
+        </Frame>
+    </DataTemplate>
+
+</ResourceDictionary> 

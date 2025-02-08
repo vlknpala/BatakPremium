@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <!-- Oyuncu kartları için yerleşim -->
+    <LinearItemsLayout x:Key="CardHandLayout" 
+                      Orientation="Horizontal" 
+                      ItemSpacing="-60"/>
+
+    <!-- Bilgisayar kartları için yerleşim -->
+    <LinearItemsLayout x:Key="ComputerCardLayout" 
+                      Orientation="Horizontal" 
+                      ItemSpacing="-75"/>
+
+    <!-- Oyuncu kartları için stil -->
+    <Style x:Key="CardFrame" TargetType="Frame">
+        <Setter Property="BackgroundColor" Value="White"/>
+        <Setter Property="CornerRadius" Value="8"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="HeightRequest" Value="120"/>
+        <Setter Property="WidthRequest" Value="80"/>
+        <Setter Property="BorderColor" Value="#2D6A4F"/>
+        <Setter Property="HasShadow" Value="True"/>
+        <Setter Property="Margin" Value="5,0,0,0"/>
+        <Setter Property="Rotation" Value="{Binding RotationAngle}"/>
+        <Setter Property="HorizontalOptions" Value="Start"/>
+    </Style>
+
+    <!-- Bilgisayar kartları için stil -->
+    <Style x:Key="ComputerCardFrame" TargetType="Frame">
+        <Setter Property="BackgroundColor" Value="#2D6A4F"/>
+        <Setter Property="CornerRadius" Value="8"/>
+        <Setter Property="HeightRequest" Value="120"/>
+        <Setter Property="WidthRequest" Value="80"/>
+        <Setter Property="BorderColor" Value="#FFD700"/>
+        <Setter Property="HasShadow" Value="True"/>
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="Opacity" Value="0.9"/>
+        <Setter Property="Rotation" Value="{Binding RotationAngle}"/>
+        <Setter Property="HorizontalOptions" Value="Start"/>
+        <Setter Property="Scale" Value="0.8"/>
+    </Style>
+
+    <!-- Masa kartları için stil -->
+    <Style x:Key="TableCardFrame" TargetType="Frame">
+        <Setter Property="BackgroundColor" Value="White"/>
+        <Setter Property="CornerRadius" Value="8"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="HeightRequest" Value="120"/>
+        <Setter Property="WidthRequest" Value="80"/>
+        <Setter Property="BorderColor" Value="#2D6A4F"/>
+        <Setter Property="HasShadow" Value="True"/>
+        <Setter Property="Margin" Value="5"/>
+    </Style>
+
+    <!-- Kart değerleri için stil -->
+    <Style x:Key="CardValueLabel" TargetType="Label">
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="HorizontalOptions" Value="Center"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+    </Style>
+
+</ResourceDictionary> 
